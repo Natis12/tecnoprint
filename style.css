@@ -140,6 +140,19 @@ nav {
     display: flex;
     align-items: center;
     position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 1100px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        height: auto;
+        min-height: 100vh;
+    }
 }
 
 .hero::before {
@@ -275,12 +288,14 @@ nav {
         position: relative !important;
         right: auto !important;
         top: auto !important;
-        margin: 40px auto 0 !important;
-        width: 100% !important;
+        left: auto !important;
+        margin: 50px auto 0 !important;
+        width: 90% !important;
         max-width: 320px !important;
         transform: none !important;
         animation: none !important;
-        display: block;
+        display: block !important;
+        box-sizing: border-box;
     }
 
     .price-val {
@@ -459,7 +474,7 @@ nav {
 /* Responsiveness for Bento */
 @media (max-width: 1100px) {
     .services-bento {
-        padding: 50px 1.5rem;
+        padding: 60px 1.5rem;
     }
 
     .bento-grid {
@@ -474,6 +489,7 @@ nav {
         min-height: 280px;
         grid-column: auto !important;
         grid-row: auto !important;
+        border-radius: 24px;
     }
 
     .motivation-column {
@@ -485,6 +501,7 @@ nav {
         box-sizing: border-box;
         text-align: center;
         justify-content: center;
+        background: rgba(26, 34, 44, 0.9);
     }
 
     .motivation-content {
@@ -493,7 +510,7 @@ nav {
     }
 
     .mega-quote {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }
 
