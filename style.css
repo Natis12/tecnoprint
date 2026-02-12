@@ -155,16 +155,16 @@ nav {
     .nav-links a.cta-phone {
         display: flex;
         background: transparent;
-        color: var(--primary);
-        border: 1px solid var(--primary);
+        color: var(--text-muted);
+        border: 1px solid transparent;
         font-weight: 700;
         box-shadow: none;
     }
 
     .nav-links a.active {
-        background: var(--primary);
-        color: #fff !important;
-        border-color: var(--primary);
+        background: transparent;
+        color: var(--primary) !important;
+        border-color: transparent;
     }
 
     .logo {
