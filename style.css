@@ -207,17 +207,13 @@ nav {
     }
 
     .hero-stats {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
         align-items: center;
         margin: 30px 0;
         width: 100%;
-    }
-
-    .stat-item:nth-child(1),
-    .stat-item:nth-child(4) {
-        grid-column: span 2;
+        text-align: center;
     }
 
     .hero-ctas {
@@ -305,27 +301,26 @@ nav {
         right: auto !important;
         top: auto !important;
         left: auto !important;
-        margin: 0 !important;
-        padding: 10px !important;
+        margin: 20px auto 0 !important;
+        padding: 20px !important;
         width: 100% !important;
-        max-width: 140px !important;
+        max-width: 280px !important;
         transform: none !important;
         animation: none !important;
         display: flex !important;
         flex-direction: column;
         align-items: center;
-        border-radius: 18px !important;
+        border-radius: 24px !important;
         border: 2px solid var(--primary);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        justify-content: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     .floating-price .price-val {
-        font-size: 1.4rem !important;
+        font-size: 2rem !important;
     }
 
     .floating-price .price-label {
-        font-size: 0.55rem !important;
+        font-size: 0.7rem !important;
     }
 }
 
