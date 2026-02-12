@@ -30,6 +30,12 @@ body {
     width: 100%;
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+}
+
 /* Announcement Bar */
 .announcement-bar {
     background: var(--primary);
@@ -63,17 +69,58 @@ nav {
     nav {
         flex-direction: column;
         height: auto;
-        padding: 20px 0;
+        padding: 15px 0;
         gap: 15px;
     }
 
     .nav-links {
+        display: flex;
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 2px;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .nav-links::-webkit-scrollbar {
         display: none;
     }
 
-    .cta-phone {
-        width: 100%;
+    .nav-links li {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        background: transparent;
+        padding: 8px 2px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        width: 100%;
+        color: var(--text-muted);
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    .nav-links a.cta-phone {
+        display: flex;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+        width: 100%;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.05);
     }
 }
 
@@ -744,7 +791,7 @@ nav {
 
 @media (max-width: 1100px) {
     .gallery-section {
-        padding: 40px 0;
+        padding: 40px 1.25rem;
     }
 }
 
@@ -776,7 +823,19 @@ nav {
 
 @media (max-width: 1100px) {
     .faq-section {
-        padding: 40px 0;
+        padding: 20px 1.25rem;
+    }
+
+    .faq-item {
+        padding: 20px;
+    }
+
+    .faq-item h4 {
+        font-size: 1.1rem;
+    }
+
+    .faq-item p {
+        font-size: 0.9rem;
     }
 }
 
