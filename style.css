@@ -20,9 +20,8 @@ body {
     background: var(--bg-dark);
     color: var(--text-white);
     line-height: 1.6;
-    overflow-x: hidden;
+    /* Removed overflow-x: hidden to allow sticky header to work */
     width: 100%;
-    max-width: 100vw;
     margin: 0;
     padding: 0;
 }
@@ -52,6 +51,20 @@ body {
     letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+    .announcement-bar {
+        position: relative;
+        /* Scrolls away naturally */
+        top: auto;
+        left: auto;
+        width: 100%;
+        z-index: 1002;
+        height: auto;
+        display: block;
+        padding: 10px 0;
+    }
+}
+
 
 header {
     background: rgba(15, 20, 26, 0.8);
@@ -70,52 +83,73 @@ nav {
 }
 
 @media (max-width: 768px) {
+    header {
+        position: sticky;
+        /* Back to sticky */
+        top: 0;
+        left: 0;
+        width: 100%;
+        backdrop-filter: blur(20px);
+    }
+
+    body {
+        padding-top: 0;
+        /* No compensation needed for sticky */
+    }
+
+    /* Mobile Navigation Reset */
     nav {
         flex-direction: column;
         height: auto;
-        padding: 10px 1.25rem;
-        gap: 10px;
+        /* Minimal side padding to maximize space for buttons */
+        padding: 10px 8px;
+        gap: 12px;
+        width: 100%;
+        overflow-x: hidden;
+        /* Safety net */
     }
 
     .nav-links {
         display: flex;
         width: 100%;
+        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-        gap: 2px;
-        padding: 0 2px;
-        /* Extra internal padding */
-        overflow: visible;
-    }
-
-    .nav-links::-webkit-scrollbar {
-        display: none;
+        align-items: center;
+        gap: 4px;
+        /* Minimal gap */
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
     .nav-links li {
-        flex: 0 1 auto;
-        /* Allow items to size based on content */
+        flex: 1 1 0;
+        /* Grow and shrink equally */
         display: flex;
         justify-content: center;
+        min-width: 0;
+        /* Allow shrinking below content size if strictly needed */
     }
 
     .nav-links a {
         background: transparent;
-        padding: 8px 4px;
-        /* Reduced padding for safety */
+        /* Vertical padding decent, horizontal minimal */
+        padding: 10px 2px;
         border-radius: 8px;
-        font-size: 0.7rem;
-        /* Slightly smaller for safety */
+        /* Responsive font size calculation */
+        font-size: clamp(0.65rem, 3.5vw, 0.75rem);
         white-space: nowrap;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        width: auto;
-        /* Width auto to fit content */
+        width: 100%;
         color: var(--text-muted);
         font-weight: 600;
-        letter-spacing: -0.3px;
+        letter-spacing: -0.2px;
+        border: 1px solid transparent;
+        /* Prevent layout shift on active state */
     }
 
     .nav-links a.cta-phone {
@@ -124,18 +158,19 @@ nav {
         color: var(--primary);
         border: 1px solid var(--primary);
         font-weight: 700;
-        width: 100%;
         box-shadow: none;
     }
 
     .nav-links a.active {
         background: var(--primary);
         color: #fff !important;
-        border: 1px solid var(--primary);
+        border-color: var(--primary);
     }
 
-    .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.05);
+    .logo {
+        /* Ensure logo fits */
+        width: 100%;
+        justify-content: center;
     }
 }
 
