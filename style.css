@@ -69,7 +69,7 @@ nav {
     nav {
         flex-direction: column;
         height: auto;
-        padding: 10px 0;
+        padding: 10px 1.25rem;
         gap: 10px;
     }
 
