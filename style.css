@@ -57,6 +57,20 @@ nav {
     height: 90px;
 }
 
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Hide for now, or could be a hamburger */
+    }
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -162,6 +176,26 @@ nav {
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-ctas .btn {
+        text-align: center;
+    }
+}
+
 .highlight {
     background: linear-gradient(90deg, #fff, var(--primary));
     -webkit-background-clip: text;
@@ -230,6 +264,16 @@ nav {
     z-index: 5;
 }
 
+@media (max-width: 1100px) {
+    .floating-price {
+        position: static;
+        margin-top: 40px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .price-val {
     font-size: 3.5rem;
     font-weight: 900;
@@ -243,6 +287,12 @@ nav {
     padding: 100px 6rem;
     max-width: 1600px;
     margin: 0 auto;
+}
+
+@media (max-width: 1100px) {
+    .services-bento {
+        padding: 50px 1.5rem;
+    }
 }
 
 .section-title {
@@ -446,6 +496,14 @@ nav {
     justify-content: center;
     gap: 40px;
     margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .marketing-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 .badge-item {
